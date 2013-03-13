@@ -1,7 +1,8 @@
 LeaveTools::Application.routes.draw do
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+  # resources :sessions, only: [:new, :create, :destroy]
 
+  resource :session
   # get "static_pages/home"
 
   # get "static_pages/about"
