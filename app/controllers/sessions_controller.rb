@@ -1,9 +1,10 @@
 class SessionsController < ApplicationController
-  skip_before_filter :verify_authenticity_token
-  # before_filter :ensure_signed_in
+  # skip_before_filter :verify_authenticity_token
 
   def new
   	@title_page = "Sign in"
+    #save root link to redirect when login susscessully
+    # session[:redirect_to] = request.root_url
 
     response.headers['WWW-Authenticate'] = Rack::OpenID.build_header(
         :identifier => "https://www.google.com/accounts/o8/id",
