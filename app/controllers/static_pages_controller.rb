@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  before_filter :ensure_signed_in
   def home
   	@title_page = "Leave Tools"
   end
