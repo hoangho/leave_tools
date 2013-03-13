@@ -3,7 +3,8 @@ class SessionsController < ApplicationController
 
   def new
   	@title_page = "Sign in"
-    #save root link to redirect when login susscessully
+    # @user = User.new
+    # save root link to redirect when login susscessully
     # session[:redirect_to] = request.root_url
 
     response.headers['WWW-Authenticate'] = Rack::OpenID.build_header(

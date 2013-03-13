@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <th>Date created</th>
+    <th>User</th>
+    <th>Approved</th>
+    <th>Approver</th>
+  </tr>
+
+<% @leave_requests.each do |f| %>
+  <tr>
+    <td><%= f.created_at %></td>
+    <td><%= User.find(f.user_id).full_name %></td>
+    <td><%= (f.is_approved == true) ? "YES" : "NO" %></td>
+    <td><%= User.find(f.approver_id).full_name %></td>
+    <td><%= link_to 'Show', f %></td>
+    <td><%= link_to 'Edit', edit_leave_request_path(f) %></td>
+    <td><%= link_to 'Destroy', f, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<br />

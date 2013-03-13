@@ -35,7 +35,6 @@ module SessionsHelper
 
   def ensure_signed_in
     unless signed_in?
-      puts '---', request.fullpath.to_s
       session[:redirect_to] = request.fullpath
       redirect_to new_session_path
     end

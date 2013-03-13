@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @leave_type.name %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @leave_type.cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_leave_type_path(@leave_type) %> |
+<%= link_to 'Back', leave_types_path %>

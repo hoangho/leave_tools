@@ -1,0 +1,25 @@
+<div class="row" id = 'abd' style='color:red;'>
+  <div class="span6 offset3">
+    <%= form_for @new_leave, :as => :new_leave do |f| %>
+      
+      <%= f.label :"Select leave type" %>
+      <%= f.select :leave_type_id, options_from_collection_for_select(@leave_types, 'id', 'name', 2) %>
+	    <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :content %>
+      <%= f.text_field :content%>
+
+      <%= f.label :"From" %>
+      <%= select_date Date.today, :prefix => :start_day %>
+
+      <%= f.label :"To" %>
+      <%= select_date Date.today, :prefix => :end_day %>
+
+      <%= f.label :"Select an approver" %>
+      <%= f.select :approver_id, options_from_collection_for_select(@managers, 'id', 'full_name') %>
+
+      <%= f.submit "Create new leave request", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

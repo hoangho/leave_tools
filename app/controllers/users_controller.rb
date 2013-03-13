@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
   	@title_page = "User"
+    @user = User.find(params[:id])
   end
 
   def create
@@ -18,6 +19,10 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def index
+    @users = User.all
   end
 
   def update

@@ -11,7 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130313071255) do
+ActiveRecord::Schema.define(:version => 20130313112731) do
+
+  create_table "leave_requests", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "leave_type_id"
+    t.boolean  "is_approved"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "approver_id"
+  end
+
+  create_table "leave_types", :force => true do |t|
+    t.text     "name"
+    t.float    "cost"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "user_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
@@ -23,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20130313071255) do
     t.datetime "updated_at",     :null => false
     t.string   "remember_token"
     t.string   "identifier_url"
+    t.integer  "user_type_id"
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"

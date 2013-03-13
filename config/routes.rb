@@ -1,8 +1,25 @@
 LeaveTools::Application.routes.draw do
+  # get "leave_requests/new"
+
+  # get "leave_requests/create"
+
+  # get "leave_requests/show"
+
+  # get "leave_requests/update"
+
+  # get "leave_requests/destroy"
+
+  resources :leave_types
+  
   resources :users
   # resources :sessions, only: [:new, :create, :destroy]
 
+  # resources :sessions
+
+  #for sign in via GG account
   resource :session
+
+  resources :leave_requests
   # get "static_pages/home"
 
   # get "static_pages/about"

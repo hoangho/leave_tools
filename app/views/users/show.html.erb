@@ -1,1 +1,12 @@
 <% provide(:title, @title_page) %>
+<%= form_for(@user) do |f| %>
+	<div>
+		First name: <b><%= @user.first_name %></b>
+	</div>
+	<div>
+		Last name: <b><%= @user.last_name %></b>
+	</div>
+	<div>
+		Availabel blance: <b><%= @user.balance.to_s %></b>
+	</div>
+<% end %>
