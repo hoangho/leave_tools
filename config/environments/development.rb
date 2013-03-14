@@ -34,4 +34,17 @@ LeaveTools::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Email configuration
+  config.action_mailer.raise_delivery_errors = true
+  # Gmail SMTP server setup
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :authentication => :login,
+    :user_name => "hthoang88@gmail.com",
+    :password => 'Thaihoang88@#'
+  }
+  # Print deprecation notices to the Rails logger
+  config.active_support.deprecation = :log
 end
